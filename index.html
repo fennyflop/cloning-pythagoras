@@ -5,10 +5,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 
-<body>
-    <script src="index.js"></script>
+<body class="page">
+    <main class="main">
+        <section class="list">
+            <div class="list__item">
+                <p class="list__num list__count">&#8470;</p>
+                <p class="list__num list__p">P</p>
+                <p class="list__num list__q">Q</p>
+                <p class="list__num list__k1">K1</p>
+                <p class="list__num list__k2">K2</p>
+                <p class="list__num list__gyp">GYP</p>
+                <button class="list__button">View</button>
+            </div>
+            <template id="list-template">
+                <div class="list__item">
+                    <p class="list__num list__count">&#8470;</p>
+                    <p class="list__num list__p">P</p>
+                    <p class="list__num list__q">Q</p>
+                    <p class="list__num list__k1">K1</p>
+                    <p class="list__num list__k2">K2</p>
+                    <p class="list__num list__gyp">GYP</p>
+                    <button class="list__button">View</button>
+                </div>
+            </template>
+        </section>
+    </main>
+    <script src="index.js" type="module"></script>
 </body>
 
 </html>
