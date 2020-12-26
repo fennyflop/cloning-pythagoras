@@ -22,7 +22,7 @@ export default class Card {
         const k1Val = this._element.querySelector('.list__k1');
         const k2Val = this._element.querySelector('.list__k2');
         const gypVal = this._element.querySelector('.list__gyp');
-        count.textContent = this._counter;
+        count.textContent = this._counter + '.';
         pVal.textContent = this._p;
         qVal.textContent = this._q;
         k1Val.textContent = this._k1;
