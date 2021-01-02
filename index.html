@@ -10,17 +10,16 @@
 
 <body class="page">
     <main class="main">
-        <section class="list">
-            <div class="list__item">
-                <p class="list__num list__count">&#8470;</p>
-                <p class="list__num list__p">P</p>
-                <p class="list__num list__q">Q</p>
-                <p class="list__num list__k1">K1</p>
-                <p class="list__num list__k2">K2</p>
-                <p class="list__num list__gyp">GYP</p>
-                <button class="list__button">Look</button>
-            </div>
-            <template id="list-template">
+        <section class="intro none">
+            <p class="intro__title">Клонирование пифагорских троек</p>
+            <form class="form">
+                <input class="form__item" type="number" placeholder="Введите цифру" required>
+                <button class="form__submit" type="submit">Создать таблицу</button>
+            </form>
+        </section>
+        <section class="results">
+            <h2 class="results__title">Таблица</h2>
+            <section class="list list-main">
                 <div class="list__item">
                     <p class="list__num list__count">&#8470;</p>
                     <p class="list__num list__p">P</p>
@@ -30,9 +29,65 @@
                     <p class="list__num list__gyp">GYP</p>
                     <button class="list__button">Look</button>
                 </div>
-            </template>
+                <template id="list-template">
+                    <div class="list__item">
+                        <p class="list__num list__count">&#8470;</p>
+                        <p class="list__num list__p">P</p>
+                        <p class="list__num list__q">Q</p>
+                        <p class="list__num list__k1">K1</p>
+                        <p class="list__num list__k2">K2</p>
+                        <p class="list__num list__gyp">GYP</p>
+                        <button class="list__button">Look</button>
+                    </div>
+                </template>
+                <template id="list-count-template">
+                    <div class="list__item">
+                        <p class="list__num list__count">&#8470;</p>
+                        <p class="list__num list__p">P</p>
+                        <p class="list__num list__q">Q</p>
+                        <p class="list__num list__k1">K1</p>
+                        <p class="list__num list__k2">K2</p>
+                        <p class="list__num list__gyp">GYP</p>
+                        <p class="list__num list__rep">REP</p>
+                        <button class="list__button">Look</button>
+                    </div>
+                </template>
+            </section>
+            <h2 class="results__title">Гипотенузы с простым числом</h2>
+            <section class="list list-prime">
+                <div class="list__item">
+                    <p class="list__num list__count">&#8470;</p>
+                    <p class="list__num list__p">P</p>
+                    <p class="list__num list__q">Q</p>
+                    <p class="list__num list__k1">K1</p>
+                    <p class="list__num list__k2">K2</p>
+                    <p class="list__num list__gyp">GYP</p>
+                    <button class="list__button">Look</button>
+                </div>
+            </section>
+            <section class="list list-count">
+                <div class="list__item">
+                    <p class="list__num list__count">&#8470;</p>
+                    <p class="list__num list__p">P</p>
+                    <p class="list__num list__q">Q</p>
+                    <p class="list__num list__k1">K1</p>
+                    <p class="list__num list__k2">K2</p>
+                    <p class="list__num list__gyp">GYP</p>
+                    <p class="list__num list__rep">REP</p>
+                    <button class="list__button">Look</button>
+                </div>  
+            </section>
+        </section>
+        <section class="loading none">
+            <p class="loading__title">Создаём...</p>
+            <img class="loading__gif" src="loading.gif" alt="Loading">
         </section>
     </main>
+    <!-- <section class="popup popup__opened ">
+        <div class="popup__container">
+
+        </div>
+    </section> -->
     <script src="index.js" type="module"></script>
 </body>
 

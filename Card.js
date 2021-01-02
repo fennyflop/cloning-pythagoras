@@ -1,5 +1,5 @@
 export default class Card {
-    constructor(selector, { counter, p, q, k1, k2, gyp }) {
+    constructor(selector, { counter, p, q, k1, k2, gyp, rep }) {
         this._cardSelector = selector;
         this._counter = counter;
         this._p = p;
@@ -7,6 +7,7 @@ export default class Card {
         this._k1 = k1;
         this._k2 = k2;
         this._gyp = gyp;
+        this._rep = rep;
     }
     _getTemplate() {
         const cardElement = document
@@ -28,6 +29,9 @@ export default class Card {
         k1Val.textContent = this._k1;
         k2Val.textContent = this._k2;
         gypVal.textContent = this._gyp;
+        if (this._cardSelector === 'list-count-template') {
+            this._element.querySelector('.list__rep').textContent = this._rep;
+        }
         return this._element;
     }
 }
