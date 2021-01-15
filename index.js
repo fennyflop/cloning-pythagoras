@@ -20,16 +20,16 @@ const maxInput = form.querySelector('.form__item');
 //         const algorithm = new Algorithm(maxValue);
 
 //         const array = algorithm.renderArray();
-        
+
 //         algorithm.gypPrime();
 
-        // array.forEach((e) => {
-        //     const card = new Card('#list-template', e);
-        //     const cardElement = card.renderCard();
-        //     list.append(cardElement);
+// array.forEach((e) => {
+//     const card = new Card('#list-template', e);
+//     const cardElement = card.renderCard();
+//     list.append(cardElement);
 
-        // })
-        
+// })
+
 //         loading.classList.toggle('none');
 //         results.classList.toggle('none');
 //     }, 1500)
@@ -41,13 +41,17 @@ const array = algorithm.renderArray();
 
 const arrayPrime = algorithm.gypPrime();
 
-const duplicatesArray = algorithm.duplicatesObject();
+// const duplicatesArray = algorithm.duplicatesObject();
 
-duplicatesArray.forEach((e) => {
-    console.log(e)
-    // const card = new Card('#list-count-template', e[1]);
-    // const cardElement = card.renderCard();
-    // listCount.append(cardElement);
+// duplicatesArray.forEach((e) => {
+//     console.log(e)
+//     // const card = new Card('#list-count-template', e[1]);
+//     // const cardElement = card.renderCard();
+//     // listCount.append(cardElement);
+// })
+
+document.querySelector('.popup__close-button').addEventListener('click', () => {
+    document.querySelector('.popup').classList.toggle('popup__opened');
 })
 
 array.forEach((e) => {
