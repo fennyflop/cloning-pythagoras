@@ -11,57 +11,48 @@ const results = document.querySelector('.results');
 const form = document.querySelector('.form');
 const maxInput = form.querySelector('.form__item');
 
-// form.addEventListener('submit', (evt) => {
-//     evt.preventDefault();
-//     const maxValue = maxInput.value;
-//     intro.classList.toggle('none');
-//     loading.classList.toggle('none');
-//     setTimeout(() => {
-//         const algorithm = new Algorithm(maxValue);
+form.addEventListener('submit', (evt) => {
+    evt.preventDefault();
+    const maxValue = maxInput.value;
+    intro.classList.toggle('none');
+    loading.classList.toggle('none');
+    setTimeout(() => {
+        const algorithm = new Algorithm(maxValue);
 
-//         const array = algorithm.renderArray();
+        const array = algorithm.renderArray();
 
-//         algorithm.gypPrime();
+        const arrayPrime = algorithm.gypPrime();
 
-// array.forEach((e) => {
-//     const card = new Card('#list-template', e);
-//     const cardElement = card.renderCard();
-//     list.append(cardElement);
+        const duplicateArray = algorithm.duplicateArray();
 
-// })
+        console.log(duplicateArray);
 
-//         loading.classList.toggle('none');
-//         results.classList.toggle('none');
-//     }, 1500)
-// })
+        array.forEach((e) => {
+            const card = new Card('#list-template', e);
+            const cardElement = card.renderCard();
+            list.append(cardElement);
+        })
 
-const algorithm = new Algorithm(10000);
+        arrayPrime.forEach((e) => {
+            const card = new Card('#list-template', e);
+            const cardElement = card.renderCard();
+            listPrime.append(cardElement);
+        })
 
-const array = algorithm.renderArray();
+        duplicateArray.forEach((e) => {
+            console.log(e);
+            const card = new Card('#list-template', e);
+            const cardElement = card.renderCard();
+            listCount.append(cardElement);
+        })
 
-const arrayPrime = algorithm.gypPrime();
+        loading.classList.toggle('none');
+        results.classList.toggle('none');
+    }, 1500)
+})
 
-// const duplicatesArray = algorithm.duplicatesObject();
 
-// duplicatesArray.forEach((e) => {
-//     console.log(e)
-//     // const card = new Card('#list-count-template', e[1]);
-//     // const cardElement = card.renderCard();
-//     // listCount.append(cardElement);
-// })
 
 document.querySelector('.popup__close-button').addEventListener('click', () => {
     document.querySelector('.popup').classList.toggle('popup__opened');
-})
-
-array.forEach((e) => {
-    const card = new Card('#list-template', e);
-    const cardElement = card.renderCard();
-    list.append(cardElement);
-})
-
-arrayPrime.forEach((e) => {
-    const card = new Card('#list-template', e);
-    const cardElement = card.renderCard();
-    listPrime.append(cardElement);
 })

@@ -1,14 +1,14 @@
 export default class Algorithm {
-    constructor (max) {
+    constructor(max) {
         this._max = max;
     }
-    _isEven (num) {
+    _isEven(num) {
         if (num % 2 === 0) {
             return true;
         }
         return false;
     }
-    
+
     _isRelative(x, y) {
         if ((typeof x !== 'number') || (typeof y !== 'number'))
             return false;
@@ -25,12 +25,12 @@ export default class Algorithm {
             return true;
         }
     }
-    _isPrime (num) {
-        for(let i = 2; i < num; i++)
-          if(num % i === 0) return false;
+    _isPrime(num) {
+        for (let i = 2; i < num; i++)
+            if (num % i === 0) return false;
         return num > 1;
     }
-    renderArray () {
+    renderArray() {
         let k1 = 0;
         let k2 = 0;
         let gyp = 0;
@@ -60,7 +60,7 @@ export default class Algorithm {
         }
         return array;
     }
-    gypPrime () {
+    gypPrime() {
         const array = this.renderArray();
         const primeArray = [];
         array.forEach((e) => {
@@ -70,19 +70,40 @@ export default class Algorithm {
         })
         return primeArray
     }
-    duplicatesObject () {
-        const obj = {};
-        const array = this.renderArray();
-        array.forEach((x) => {
-            obj[x.gyp] = [(obj[x.gyp] || 0) + 1, x]
-        });
-        const duplicatesArray = Object.entries(obj);
-        const result = []
-        duplicatesArray.forEach((e) => {
-            if (e[1] !== 1) {
-                result.push(e);
+    _renderGypArray() {
+        let gyp = 0;
+        let array = [];
+        for (let p = 2; gyp < this._max; p++) {
+            for (let q = 1; q < p; q++) {
+                if (this._isEven(p) && !this._isEven(q) || !this._isEven(p) && this._isEven(q)) {
+                    if (!(this._isRelative(p, q))) {
+                        gyp = Math.pow(p, 2) + Math.pow(q, 2);
+                        array.push(gyp);
+                    }
+                }
             }
+        }
+        return array;
+    }
+    duplicateArray() {
+        const sorted_arr = this._renderGypArray().sort((a, b) => a - b);
+        let results = [];
+        let duplicateArray = [];
+        for (let i = 0; i < sorted_arr.length - 1; i++) {
+            if (sorted_arr[i + 1] == sorted_arr[i]) {
+                results.push(sorted_arr[i]);
+            }
+        }
+        const array = this.renderArray();
+
+        results.forEach((gyp) => {
+            array.forEach((el) => {
+                if (el.gyp === gyp) {
+                    duplicateArray.push(el);
+                }
+            })
         })
-        return result;
+
+        return duplicateArray;
     }
 }   
